@@ -1,4 +1,151 @@
+namespace SpriteKind {
+    export const projectile1 = SpriteKind.create()
+    export const projectile2 = SpriteKind.create()
+    export const projectile3 = SpriteKind.create()
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile4 = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        5 . . 5 . . 5 . . . . . . . . . 
+        . 5 . 5 . 5 . . . . . . . . . . 
+        . . 5 5 5 9 . . . . . . . . . . 
+        5 5 5 5 5 5 5 3 9 3 9 3 9 3 9 3 
+        . . 5 5 5 9 . . . . . . . . . . 
+        . 5 . 5 . 5 . . . . . . . . . . 
+        5 . . 5 . . 5 . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, mySprite, -100, 0)
+    music.play(music.createSoundEffect(WaveShape.Triangle, 1278, 1, 130, 0, 300, SoundExpressionEffect.None, InterpolationCurve.Curve), music.PlaybackMode.InBackground)
+})
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    [img`
+        . . . . . f f 4 4 f f . . . . . 
+        . . . . f 5 4 5 5 4 5 f . . . . 
+        . . . f e 3 3 3 3 3 3 e f . . . 
+        . . f b 3 3 3 3 3 3 3 3 b f . . 
+        . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+        . f 3 3 3 3 3 3 3 3 3 3 3 3 f . 
+        . f b 3 3 3 3 3 3 3 3 3 3 b f . 
+        . f b b 3 3 3 3 3 3 3 3 b b f . 
+        . f b b b b b b b b b b b b f . 
+        f c b b b b b b b b b b b b c f 
+        f b b b b b b b b b b b b b b f 
+        . f c c b b b b b b b b c c f . 
+        . . e 4 c f f f f f f c 4 e . . 
+        . . e f b d b d b d b b f e . . 
+        . . . f f 1 d 1 d 1 d f f . . . 
+        . . . . . f f b b f f . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f 4 4 f f . . . . . 
+        . . . . f 5 4 5 5 4 5 f . . . . 
+        . . . f e 3 3 3 3 3 3 e f . . . 
+        . . f b 3 3 3 3 3 3 3 3 b f . . 
+        . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+        . f b 3 3 3 3 3 3 3 3 3 3 b f . 
+        . f b b 3 3 3 3 3 3 3 3 b b f . 
+        . f b b b b b b b b b b b b f . 
+        f c b b b b b b b b b b b b f . 
+        f b b b b b b b b b b b b c f . 
+        f f b b b b b b b b b b c f . . 
+        . f c c c f f f f f f f e c . . 
+        . . . f b b d b d d e 4 4 e . . 
+        . . . f f 1 1 d 1 d e e f . . . 
+        . . . . . f b b f f f . . . . . 
+        `,img`
+        . . . . . f f 4 4 f f . . . . . 
+        . . . . f 5 4 5 5 4 5 f . . . . 
+        . . . f e 3 3 3 3 3 3 e f . . . 
+        . . f b 3 3 3 3 3 3 3 3 b f . . 
+        . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+        . f 3 3 3 3 3 3 3 3 3 3 3 3 f . 
+        . f b 3 3 3 3 3 3 3 3 3 3 b f . 
+        . f b b 3 3 3 3 3 3 3 3 b b f . 
+        . f b b b b b b b b b b b b f . 
+        f c b b b b b b b b b b b b c f 
+        f b b b b b b b b b b b b b b f 
+        . f c c b b b b b b b b c c f . 
+        . . e 4 c f f f f f f c 4 e . . 
+        . . e f b d b d b d b b f e . . 
+        . . . f f 1 d 1 d 1 d f f . . . 
+        . . . . . f f b b f f . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f 4 4 f f . . . . . 
+        . . . . f 5 4 5 5 4 5 f . . . . 
+        . . . f e 3 3 3 3 3 3 e f . . . 
+        . . f b 3 3 3 3 3 3 3 3 b f . . 
+        . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+        . f b 3 3 3 3 3 3 3 3 3 3 b f . 
+        . f b b 3 3 3 3 3 3 3 3 b b f . 
+        . f b b b b b b b b b b b b f . 
+        . f b b b b b b b b b b b b c f 
+        . f c b b b b b b b b b b b b f 
+        . . f c b b b b b b b b b b f f 
+        . . c e f f f f f f f c c c f . 
+        . . e 4 4 e d d b d b b f . . . 
+        . . . f e e d 1 d 1 1 f f . . . 
+        . . . . . f f f b b f . . . . . 
+        `],
+    500,
+    true
+    )
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.projectile1, function (sprite, otherSprite) {
+    projectile1.startEffect(effects.hearts)
+})
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    [img`
+        . . . f 4 4 f f f f . . . . . . 
+        . . f 4 5 5 4 5 f b f f . . . . 
+        . . f 5 5 5 5 4 e 3 3 b f . . . 
+        . . f e 4 4 4 e 3 3 3 3 b f . . 
+        . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+        . f 3 3 e e 3 b e 3 3 3 3 f . . 
+        . f 3 3 e e e f f 3 3 3 3 f . . 
+        . f 3 e e e f b f b b b b f . . 
+        . . f e 4 4 f 1 e b b b b f . . 
+        . . . f 4 4 4 4 f b b b b f f . 
+        . . . f e e e f f f b b b b f . 
+        . . . f d d d e 4 4 f b b f . . 
+        . . . f d d d e 4 4 e f f . . . 
+        . . f b d b d b e e b f . . . . 
+        . . f f 1 d 1 d 1 d f f . . . . 
+        . . . . f f b b f f . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . f 4 4 f f f f . . . . . . 
+        . . f 4 5 5 4 5 f b f f . . . . 
+        . . f 5 5 5 5 4 e 3 3 b f . . . 
+        . . f e 4 4 4 e 3 3 3 3 b f . . 
+        . f 3 3 3 3 3 3 3 3 3 3 3 f . . 
+        . f 3 3 e e 3 b e 3 3 3 3 f . . 
+        . f 3 3 e e e f f 3 3 3 3 f . . 
+        . . f e e e f b f b b b b f f . 
+        . . . e 4 4 f 1 e b b b b b f . 
+        . . . f 4 4 4 4 f b b b b b f . 
+        . . . f d d d e 4 4 b b b f . . 
+        . . . f d d d e 4 4 f f f . . . 
+        . . f d d d b b e e b b f . . . 
+        . . f b d 1 d 1 d d b f . . . . 
+        . . . f f f b b f f f . . . . . 
+        `],
+    500,
+    true
+    )
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     mySprite,
     [img`
@@ -71,51 +218,107 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . f b b f f f . . . . . 
         `],
     500,
-    false
+    true
     )
-    pause(2000)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Projectile, function (sprite, otherSprite) {
+    projectile.startEffect(effects.hearts)
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     mySprite,
     [img`
-        . . . f 4 4 f f f f . . . . . . 
-        . . f 4 5 5 4 5 f b f f . . . . 
-        . . f 5 5 5 5 4 e 3 3 b f . . . 
-        . . f e 4 4 4 e 3 3 3 3 b f . . 
+        . . . . . . f f f f 4 4 f . . . 
+        . . . . f f b f 5 4 5 5 4 f . . 
+        . . . f b 3 3 e 4 5 5 5 5 f . . 
+        . . f b 3 3 3 3 e 4 4 4 e f . . 
         . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-        . f 3 3 e e 3 b e 3 3 3 3 f . . 
-        . f 3 3 e e e f f 3 3 3 3 f . . 
-        . f 3 e e e f b f b b b b f . . 
-        . . f e 4 4 f 1 e b b b b f . . 
-        . . . f 4 4 4 4 f b b b b f f . 
-        . . . f e e e f f f b b b b f . 
-        . . . f d d d e 4 4 f b b f . . 
-        . . . f d d d e 4 4 e f f . . . 
-        . . f b d b d b e e b f . . . . 
-        . . f f 1 d 1 d 1 d f f . . . . 
-        . . . . f f b b f f . . . . . . 
+        . . f 3 3 3 3 e b 3 e e 3 3 f . 
+        . . f 3 3 3 3 f f e e e 3 3 f . 
+        . . f b b b b f b f e e e 3 f . 
+        . . f b b b b e 1 f 4 4 e f . . 
+        . f f b b b b f 4 4 4 4 f . . . 
+        . f b b b b f f f e e e f . . . 
+        . . f b b f 4 4 e d d d f . . . 
+        . . . f f e 4 4 e d d d f . . . 
+        . . . . f b e e b d b d b f . . 
+        . . . . f f d 1 d 1 d 1 f f . . 
+        . . . . . . f f b b f f . . . . 
         `,img`
         . . . . . . . . . . . . . . . . 
-        . . . f 4 4 f f f f . . . . . . 
-        . . f 4 5 5 4 5 f b f f . . . . 
-        . . f 5 5 5 5 4 e 3 3 b f . . . 
-        . . f e 4 4 4 e 3 3 3 3 b f . . 
-        . f 3 3 3 3 3 3 3 3 3 3 3 f . . 
-        . f 3 3 e e 3 b e 3 3 3 3 f . . 
-        . f 3 3 e e e f f 3 3 3 3 f . . 
-        . . f e e e f b f b b b b f f . 
-        . . . e 4 4 f 1 e b b b b b f . 
-        . . . f 4 4 4 4 f b b b b b f . 
-        . . . f d d d e 4 4 b b b f . . 
-        . . . f d d d e 4 4 f f f . . . 
-        . . f d d d b b e e b b f . . . 
-        . . f b d 1 d 1 d d b f . . . . 
-        . . . f f f b b f f f . . . . . 
+        . . . . . . f f f f 4 4 f . . . 
+        . . . . f f b f 5 4 5 5 4 f . . 
+        . . . f b 3 3 e 4 5 5 5 5 f . . 
+        . . f b 3 3 3 3 e 4 4 4 e f . . 
+        . . f 3 3 3 3 3 3 3 3 3 3 3 f . 
+        . . f 3 3 3 3 e b 3 e e 3 3 f . 
+        . . f 3 3 3 3 f f e e e 3 3 f . 
+        . f f b b b b f b f e e e f . . 
+        . f b b b b b e 1 f 4 4 e . . . 
+        . f b b b b b f 4 4 4 4 f . . . 
+        . . f b b b 4 4 e d d d f . . . 
+        . . . f f f 4 4 e d d d f . . . 
+        . . . f b b e e b b d d d f . . 
+        . . . . f b d d 1 d 1 d b f . . 
+        . . . . . f f f b b f f f . . . 
         `],
     500,
     true
     )
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.projectile2, function (sprite, otherSprite) {
+    projectile2.startEffect(effects.hearts)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.projectile3, function (sprite, otherSprite) {
+    projectile3.startEffect(effects.hearts)
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile4 = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . 5 . . 5 . . 5 
+        . . . . . . . . . . 5 . 5 . 5 . 
+        . . . . . . . . . . 9 5 5 5 . . 
+        3 9 3 9 3 9 3 9 3 5 5 5 5 5 5 5 
+        . . . . . . . . . . 9 5 5 5 . . 
+        . . . . . . . . . . 5 . 5 . 5 . 
+        . . . . . . . . . 5 . . 5 . . 5 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, mySprite, 50, 0)
+    music.play(music.createSoundEffect(WaveShape.Triangle, 1313, 1, 145, 0, 300, SoundExpressionEffect.None, InterpolationCurve.Curve), music.PlaybackMode.InBackground)
+    projectile4.setVelocity(50, 0)
+})
+let projectile5: Sprite = null
+let projectile4: Sprite = null
+let projectile3: Sprite = null
+let projectile2: Sprite = null
+let projectile1: Sprite = null
+let projectile: Sprite = null
 let mySprite: Sprite = null
+let mySprite2 = sprites.create(img`
+    . . . . f f f f . . . . 
+    . . f f e e e e f f . . 
+    . f f e e e e e e f f . 
+    f f f f 4 e e e f f f f 
+    f f f 4 4 4 e e f f f f 
+    f f f 4 4 4 4 e e f f f 
+    f 4 e 4 4 4 4 4 4 e 4 f 
+    f 4 4 f f 4 4 f f 4 4 f 
+    f e 4 d d d d d d 4 e f 
+    . f e d d b b d d e f . 
+    . f f e 4 4 4 4 e f f . 
+    e 4 f b 1 1 1 1 b f 4 e 
+    4 d f 1 1 1 1 1 1 f d 4 
+    4 4 f 6 6 6 6 6 6 f 4 4 
+    . . . f f f f f f . . . 
+    . . . f f . . f f . . . 
+    `, SpriteKind.Enemy)
 music.play(music.stringPlayable("A B G A B G A B ", 120), music.PlaybackMode.InBackground)
 scene.setBackgroundImage(img`
     8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
@@ -257,49 +460,9 @@ mySprite = sprites.create(img`
     . . f b d 1 d 1 d d b f . . . . 
     . . . f f f b b f f f . . . . . 
     `, SpriteKind.Player)
-animation.runImageAnimation(
-mySprite,
-[img`
-    . . . f 4 4 f f f f . . . . . . 
-    . . f 4 5 5 4 5 f b f f . . . . 
-    . . f 5 5 5 5 4 e 3 3 b f . . . 
-    . . f e 4 4 4 e 3 3 3 3 b f . . 
-    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-    . f 3 3 e e 3 b e 3 3 3 3 f . . 
-    . f 3 3 e e e f f 3 3 3 3 f . . 
-    . f 3 e e e f b f b b b b f . . 
-    . . f e 4 4 f 1 e b b b b f . . 
-    . . . f 4 4 4 4 f b b b b f f . 
-    . . . f e e e f f f b b b b f . 
-    . . . f d d d e 4 4 f b b f . . 
-    . . . f d d d e 4 4 e f f . . . 
-    . . f b d b d b e e b f . . . . 
-    . . f f 1 d 1 d 1 d f f . . . . 
-    . . . . f f b b f f . . . . . . 
-    `,img`
-    . . . . . . . . . . . . . . . . 
-    . . . f 4 4 f f f f . . . . . . 
-    . . f 4 5 5 4 5 f b f f . . . . 
-    . . f 5 5 5 5 4 e 3 3 b f . . . 
-    . . f e 4 4 4 e 3 3 3 3 b f . . 
-    . f 3 3 3 3 3 3 3 3 3 3 3 f . . 
-    . f 3 3 e e 3 b e 3 3 3 3 f . . 
-    . f 3 3 e e e f f 3 3 3 3 f . . 
-    . . f e e e f b f b b b b f f . 
-    . . . e 4 4 f 1 e b b b b b f . 
-    . . . f 4 4 4 4 f b b b b b f . 
-    . . . f d d d e 4 4 b b b f . . 
-    . . . f d d d e 4 4 f f f . . . 
-    . . f d d d b b e e b b f . . . 
-    . . f b d 1 d 1 d d b f . . . . 
-    . . . f f f b b f f f . . . . . 
-    `],
-500,
-true
-)
 controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
-let projectile = sprites.create(img`
+projectile = sprites.create(img`
     ....................
     ....................
     ....................
@@ -322,7 +485,7 @@ let projectile = sprites.create(img`
     ......bbbb...bb.bb..
     `, SpriteKind.Projectile)
 projectile.setPosition(randint(0, 160), randint(90, 160))
-let projectile1 = sprites.create(img`
+projectile1 = sprites.create(img`
     ....................
     .......ccccc........
     ......ccccccc.......
@@ -343,9 +506,9 @@ let projectile1 = sprites.create(img`
     ....................
     ....................
     ....................
-    `, SpriteKind.Projectile)
+    `, SpriteKind.projectile1)
 projectile1.setPosition(randint(0, 160), randint(0, 20))
-let projectile2 = sprites.create(img`
+projectile2 = sprites.create(img`
     ....................
     ....................
     ......777...........
@@ -366,25 +529,25 @@ let projectile2 = sprites.create(img`
     ..............77....
     ...............7....
     ....................
-    `, SpriteKind.Projectile)
-let projectile3 = sprites.create(img`
+    `, SpriteKind.projectile2)
+projectile3 = sprites.create(img`
+    ...c.c..............
+    ...c.c..............
+    ...bbb..............
+    ...bcb..............
+    .cbbbb..............
+    .bbbbbbdbbbbbdccc...
+    ....bbbbbbbbbbbbc...
+    .....bbbbbdbbbdb.c..
+    ......bbbbbbbbbb....
+    ......bb.....bb.....
+    ......bb.....bb.....
+    ......bb.....bb.....
+    ......db.....db.....
+    ......cc.....cc.....
     ....................
     ....................
     ....................
-    ....................
-    ....................
-    ....................
-    ....d.d.............
-    ....bbb.............
-    ...3bfb.............
-    ...dbbb.............
-    .....bb.............
-    .....bbdbbbdbd......
-    .....bbbbbbbd.d.....
-    .....bbbbdbbb.......
-    .....b......b.......
-    .....b......b.......
-    .....d......d.......
     ....................
     ....................
     ....................
@@ -395,3 +558,23 @@ projectile.setStayInScreen(true)
 projectile1.setStayInScreen(true)
 projectile2.setStayInScreen(true)
 projectile3.setStayInScreen(true)
+forever(function () {
+    projectile5 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 4 4 . . . . . . . 
+        . . . . . . 4 5 5 4 . . . . . . 
+        . . . . . . 2 5 5 2 . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
+})
